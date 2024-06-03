@@ -63,16 +63,6 @@ namespace EasyPDF.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap documento_pdf {
-            get {
-                object obj = ResourceManager.GetObject("documento-pdf", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icons8_flecha_grossa_apontando_para_baixo_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-flecha-grossa-apontando-para-baixo-48", resourceCulture);
