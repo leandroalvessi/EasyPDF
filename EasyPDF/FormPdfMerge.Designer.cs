@@ -40,7 +40,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBoxOutPath = new System.Windows.Forms.TextBox();
             this.buttonOutPath = new System.Windows.Forms.Button();
-            this.buttonMesclar = new System.Windows.Forms.Button();
+            this.buttonJuntar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBoxMergePDF = new System.Windows.Forms.TextBox();
             this.groupBoxSequencia = new System.Windows.Forms.GroupBox();
@@ -175,15 +175,15 @@
             this.buttonOutPath.UseVisualStyleBackColor = true;
             this.buttonOutPath.Click += new System.EventHandler(this.buttonOutPath_Click);
             // 
-            // buttonMesclar
+            // buttonJuntar
             // 
-            this.buttonMesclar.Location = new System.Drawing.Point(12, 432);
-            this.buttonMesclar.Name = "buttonMesclar";
-            this.buttonMesclar.Size = new System.Drawing.Size(91, 49);
-            this.buttonMesclar.TabIndex = 7;
-            this.buttonMesclar.Text = "Mesclar";
-            this.buttonMesclar.UseVisualStyleBackColor = true;
-            this.buttonMesclar.Click += new System.EventHandler(this.buttonMesclar_Click);
+            this.buttonJuntar.Location = new System.Drawing.Point(12, 432);
+            this.buttonJuntar.Name = "buttonJuntar";
+            this.buttonJuntar.Size = new System.Drawing.Size(91, 49);
+            this.buttonJuntar.TabIndex = 7;
+            this.buttonJuntar.Text = "Juntar";
+            this.buttonJuntar.UseVisualStyleBackColor = true;
+            this.buttonJuntar.Click += new System.EventHandler(this.buttonMesclar_Click);
             // 
             // groupBox3
             // 
@@ -238,7 +238,7 @@
             this.ClientSize = new System.Drawing.Size(798, 493);
             this.Controls.Add(this.groupBoxSequencia);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.buttonMesclar);
+            this.Controls.Add(this.buttonJuntar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonBaixo);
@@ -247,7 +247,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPdfMerge";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mesclar PDFs";
+            this.Text = "Juntar PDFs";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -271,7 +271,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBoxOutPath;
         private System.Windows.Forms.Button buttonOutPath;
-        private System.Windows.Forms.Button buttonMesclar;
+        private System.Windows.Forms.Button buttonJuntar;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBoxMergePDF;
         private System.Windows.Forms.GroupBox groupBoxSequencia;
