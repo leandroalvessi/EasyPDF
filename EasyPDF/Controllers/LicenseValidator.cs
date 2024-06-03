@@ -19,32 +19,53 @@ namespace EasyPDF.Controllers
             _connectionString = connectionString;
         }
 
-        public (bool isValid, int codigoError, DateTime dataFimLicenca) ValidateHardwareId(string hardwareId)
+        public (bool isValid, int codigoError, DateTime dataFimLicenca) ValidateAndUpdateHardwareId(string hardwareId)
         {
-            DateTime dataFimLicenca = DateTime.MinValue; // Inicializar a variável
-
+            DateTime dataFimLicenca = DateTime.MinValue;
             try
             {
                 using (var conn = new NpgsqlConnection(_connectionString))
                 {
                     conn.Open();
-                    using (var cmd = new NpgsqlCommand("SELECT nome, datainicio, datafimlicenca FROM licenses WHERE hardware_id = @hardwareId", conn))
+
+                    using (var cmd = new NpgsqlCommand(@"
+                WITH updated_row AS (
+                    UPDATE licenses
+                    SET access_count = access_count + 1
+                    WHERE hardware_id = @hardwareId
+                    RETURNING nome, datainicio, datafimlicenca, access_count
+                )
+                SELECT 
+                    CASE 
+                        WHEN EXISTS (SELECT 1 FROM updated_row) THEN
+                            true
+                        ELSE
+                            false
+                    END AS isValid,
+                    CASE 
+                        WHEN EXISTS (SELECT 1 FROM updated_row) THEN
+                            0 -- No error
+                        ELSE
+                            1 -- Error code 1: Não encontrado
+                    END AS codigoError,
+                    CASE 
+                        WHEN EXISTS (SELECT 1 FROM updated_row) THEN
+                            (SELECT datafimlicenca FROM updated_row) -- Retorna datafimlicenca se encontrado
+                        ELSE
+                            NULL -- Retorna NULL se não encontrado
+                    END AS dataFimLicenca;", conn))
                     {
                         cmd.Parameters.AddWithValue("hardwareId", hardwareId);
+
                         using (var reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
                             {
-                                var nome = reader.GetString(reader.GetOrdinal("nome"));
-                                var dataInicio = reader.GetDateTime(reader.GetOrdinal("datainicio"));
-                                dataFimLicenca = reader.GetDateTime(reader.GetOrdinal("datafimlicenca"));
+                                bool isValid = reader.GetBoolean(reader.GetOrdinal("isValid"));
+                                int codigoError = reader.GetInt32(reader.GetOrdinal("codigoError"));
+                                dataFimLicenca = reader.GetDateTime(reader.GetOrdinal("dataFimLicenca"));
 
-                                if (dataFimLicenca < DateTime.Now)
-                                {
-                                    return (false, 2, dataFimLicenca);
-                                }
-
-                                return (true, 0, dataFimLicenca);
+                                return (isValid, codigoError, dataFimLicenca);
                             }
                             else
                             {
@@ -56,9 +77,11 @@ namespace EasyPDF.Controllers
             }
             catch (Exception ex)
             {
-                return (false, 99, dataFimLicenca);
+                // Em caso de exceção
+                return (false, 99, dataFimLicenca); // Error code 99: Erro desconhecido
             }
         }
+
 
         public void RegisterHardwareId(string hardwareId)
         {

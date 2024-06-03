@@ -38,8 +38,7 @@ namespace EasyPDF
         private void HabilitarCamposLisenca()
         {
             string HardwareId = HardwareInfo.GetHardwareId();
-
-            string connectionString = "Host=cornelius.db.elephantsql.com;Username=phkdhobi;Password=xBC3QfM_R_4_6Fb0df88y4nQk0K9x8TP;Database=phkdhobi";
+            string connectionString = "Host=pg-bd85c4d-leandroalves-1f0f.e.aivencloud.com;Port=21959;Username=avnadmin;Password=AVNS_LE30XeKEW5NCvxIrQ8o;Database=defaultdb;SSL Mode=Require;Trust Server Certificate=true";
 
             LicenseValidator validator = new LicenseValidator(connectionString);
 
@@ -50,7 +49,7 @@ namespace EasyPDF
 
             if (InternetChecker.IsConnectedToInternet())
             {
-                var validationResult = validator.ValidateHardwareId(hardwareId);
+                var validationResult = validator.ValidateAndUpdateHardwareId(hardwareId);
                 if (validationResult.isValid)
                 {
                     button2.Enabled = true;
