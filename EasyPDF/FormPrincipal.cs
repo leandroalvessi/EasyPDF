@@ -38,9 +38,8 @@ namespace EasyPDF
         private void HabilitarCamposLisenca()
         {
             string HardwareId = HardwareInfo.GetHardwareId();
-            string connectionString = "Host=pg-bd85c4d-leandroalves-1f0f.e.aivencloud.com;Port=21959;Username=avnadmin;Password=AVNS_LE30XeKEW5NCvxIrQ8o;Database=defaultdb;SSL Mode=Require;Trust Server Certificate=true";
 
-            LicenseValidator validator = new LicenseValidator(connectionString);
+            LicenseValidator validator = new LicenseValidator(ConnectionDB.ConnectionString());
 
             //validator.CreateLicensesTable();
 
