@@ -18,6 +18,8 @@ namespace EasyPDF
         public FormComprimir()
         {
             InitializeComponent();
+            comboBoxVersao.SelectedIndex = 5;
+            comboBoxCompressao.SelectedIndex = 3;
         }
 
         private void buttonInpPath_Click(object sender, EventArgs e)
@@ -103,10 +105,51 @@ namespace EasyPDF
                             using (PdfCopy copy = new PdfCopy(document, fs))
                             {
                                 // Set PDF version
-                                copy.SetPdfVersion(PdfWriter.PDF_VERSION_1_7);
+                                switch (comboBoxVersao.SelectedIndex)
+                                {
+                                    case 0:
+                                        copy.SetPdfVersion(PdfWriter.PDF_VERSION_1_2);
+                                        break;
+                                    case 1:
+                                        copy.SetPdfVersion(PdfWriter.PDF_VERSION_1_3);
+                                        break;
+                                    case 2:
+                                        copy.SetPdfVersion(PdfWriter.PDF_VERSION_1_4);
+                                        break;
+                                    case 3:
+                                        copy.SetPdfVersion(PdfWriter.PDF_VERSION_1_5);
+                                        break;
+                                    case 4:
+                                        copy.SetPdfVersion(PdfWriter.PDF_VERSION_1_6);
+                                        break;
+                                    case 5:
+                                        copy.SetPdfVersion(PdfWriter.PDF_VERSION_1_7);
+                                        break;
+                                    default:
+                                        copy.SetPdfVersion(PdfWriter.PDF_VERSION_1_7);
+                                        break;
+                                }
 
                                 // Enable compression
                                 copy.SetFullCompression();
+                                switch (comboBoxCompressao.SelectedIndex)
+                                {
+                                    case 0:
+                                        copy.CompressionLevel = PdfStream.DEFAULT_COMPRESSION;
+                                        break;
+                                    case 1:
+                                        copy.CompressionLevel = PdfStream.NO_COMPRESSION;
+                                        break;
+                                    case 2:
+                                        copy.CompressionLevel = PdfStream.BEST_SPEED;
+                                        break;
+                                    case 3:
+                                        copy.CompressionLevel = PdfStream.BEST_COMPRESSION;
+                                        break;
+                                    default:
+                                        copy.CompressionLevel = PdfStream.BEST_COMPRESSION;
+                                        break;
+                                }
                                 copy.CompressionLevel = PdfStream.BEST_COMPRESSION;
 
                                 // Open document

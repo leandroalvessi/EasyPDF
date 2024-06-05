@@ -43,12 +43,18 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Seleciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBoxVersao = new System.Windows.Forms.ComboBox();
+            this.groupBoxVersao = new System.Windows.Forms.GroupBox();
+            this.groupBoxCompressao = new System.Windows.Forms.GroupBox();
+            this.comboBoxCompressao = new System.Windows.Forms.ComboBox();
             this.groupBoxSequencia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSequencia)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.groupBoxVersao.SuspendLayout();
+            this.groupBoxCompressao.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxSequencia
@@ -57,7 +63,7 @@
             this.groupBoxSequencia.Location = new System.Drawing.Point(693, 426);
             this.groupBoxSequencia.Name = "groupBoxSequencia";
             this.groupBoxSequencia.Size = new System.Drawing.Size(92, 55);
-            this.groupBoxSequencia.TabIndex = 22;
+            this.groupBoxSequencia.TabIndex = 6;
             this.groupBoxSequencia.TabStop = false;
             this.groupBoxSequencia.Text = "Sequência";
             // 
@@ -82,7 +88,7 @@
             this.groupBox3.Location = new System.Drawing.Point(108, 426);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(579, 55);
-            this.groupBox3.TabIndex = 21;
+            this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Salvar Arquivo";
             // 
@@ -102,7 +108,7 @@
             this.buttonComprimir.Location = new System.Drawing.Point(11, 432);
             this.buttonComprimir.Name = "buttonComprimir";
             this.buttonComprimir.Size = new System.Drawing.Size(91, 49);
-            this.buttonComprimir.TabIndex = 18;
+            this.buttonComprimir.TabIndex = 7;
             this.buttonComprimir.Text = "Comprimir";
             this.buttonComprimir.UseVisualStyleBackColor = true;
             this.buttonComprimir.Click += new System.EventHandler(this.buttonComprimir_Click);
@@ -113,8 +119,8 @@
             this.groupBox2.Controls.Add(this.buttonOutPath);
             this.groupBox2.Location = new System.Drawing.Point(11, 73);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(774, 55);
-            this.groupBox2.TabIndex = 20;
+            this.groupBox2.Size = new System.Drawing.Size(610, 55);
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Diretório para salvar";
             // 
@@ -125,7 +131,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxOutPath.Location = new System.Drawing.Point(103, 21);
             this.textBoxOutPath.Name = "textBoxOutPath";
-            this.textBoxOutPath.Size = new System.Drawing.Size(665, 22);
+            this.textBoxOutPath.Size = new System.Drawing.Size(501, 22);
             this.textBoxOutPath.TabIndex = 3;
             // 
             // buttonOutPath
@@ -144,8 +150,8 @@
             this.groupBox1.Controls.Add(this.buttonInpPath);
             this.groupBox1.Location = new System.Drawing.Point(11, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(774, 55);
-            this.groupBox1.TabIndex = 19;
+            this.groupBox1.Size = new System.Drawing.Size(610, 55);
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Diretório dos arquivos";
             // 
@@ -156,7 +162,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxInpPath.Location = new System.Drawing.Point(103, 21);
             this.textBoxInpPath.Name = "textBoxInpPath";
-            this.textBoxInpPath.Size = new System.Drawing.Size(665, 22);
+            this.textBoxInpPath.Size = new System.Drawing.Size(501, 22);
             this.textBoxInpPath.TabIndex = 1;
             // 
             // buttonInpPath
@@ -187,7 +193,7 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(774, 286);
-            this.dataGridView.TabIndex = 15;
+            this.dataGridView.TabIndex = 4;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // Seleciona
@@ -208,11 +214,65 @@
             this.Nome.ReadOnly = true;
             this.Nome.Width = 500;
             // 
+            // comboBoxVersao
+            // 
+            this.comboBoxVersao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxVersao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxVersao.FormattingEnabled = true;
+            this.comboBoxVersao.Items.AddRange(new object[] {
+            "PDF 1.2",
+            "PDF 1.3",
+            "PDF 1.4",
+            "PDF 1.5",
+            "PDF 1.6",
+            "PDF 1.7"});
+            this.comboBoxVersao.Location = new System.Drawing.Point(6, 20);
+            this.comboBoxVersao.Name = "comboBoxVersao";
+            this.comboBoxVersao.Size = new System.Drawing.Size(146, 24);
+            this.comboBoxVersao.TabIndex = 23;
+            // 
+            // groupBoxVersao
+            // 
+            this.groupBoxVersao.Controls.Add(this.comboBoxVersao);
+            this.groupBoxVersao.Location = new System.Drawing.Point(627, 12);
+            this.groupBoxVersao.Name = "groupBoxVersao";
+            this.groupBoxVersao.Size = new System.Drawing.Size(158, 55);
+            this.groupBoxVersao.TabIndex = 2;
+            this.groupBoxVersao.TabStop = false;
+            this.groupBoxVersao.Text = "Versão PDF";
+            // 
+            // groupBoxCompressao
+            // 
+            this.groupBoxCompressao.Controls.Add(this.comboBoxCompressao);
+            this.groupBoxCompressao.Location = new System.Drawing.Point(627, 73);
+            this.groupBoxCompressao.Name = "groupBoxCompressao";
+            this.groupBoxCompressao.Size = new System.Drawing.Size(158, 55);
+            this.groupBoxCompressao.TabIndex = 3;
+            this.groupBoxCompressao.TabStop = false;
+            this.groupBoxCompressao.Text = "Tipo Compressão";
+            // 
+            // comboBoxCompressao
+            // 
+            this.comboBoxCompressao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxCompressao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCompressao.FormattingEnabled = true;
+            this.comboBoxCompressao.Items.AddRange(new object[] {
+            "Compressão Padrão",
+            "Sem Compressão",
+            "Compressão Rápida",
+            "Melhor Compressão"});
+            this.comboBoxCompressao.Location = new System.Drawing.Point(6, 20);
+            this.comboBoxCompressao.Name = "comboBoxCompressao";
+            this.comboBoxCompressao.Size = new System.Drawing.Size(146, 24);
+            this.comboBoxCompressao.TabIndex = 23;
+            // 
             // FormComprimir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 493);
+            this.Controls.Add(this.groupBoxCompressao);
+            this.Controls.Add(this.groupBoxVersao);
             this.Controls.Add(this.groupBoxSequencia);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.buttonComprimir);
@@ -232,6 +292,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.groupBoxVersao.ResumeLayout(false);
+            this.groupBoxCompressao.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -252,5 +314,9 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Seleciona;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.ComboBox comboBoxVersao;
+        private System.Windows.Forms.GroupBox groupBoxVersao;
+        private System.Windows.Forms.GroupBox groupBoxCompressao;
+        private System.Windows.Forms.ComboBox comboBoxCompressao;
     }
 }
