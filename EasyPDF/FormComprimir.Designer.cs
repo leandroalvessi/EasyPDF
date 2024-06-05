@@ -47,6 +47,8 @@
             this.groupBoxVersao = new System.Windows.Forms.GroupBox();
             this.groupBoxCompressao = new System.Windows.Forms.GroupBox();
             this.comboBoxCompressao = new System.Windows.Forms.ComboBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxSequencia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSequencia)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -55,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBoxVersao.SuspendLayout();
             this.groupBoxCompressao.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxSequencia
@@ -123,7 +126,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.textBoxOutPath);
             this.groupBox2.Controls.Add(this.buttonOutPath);
-            this.groupBox2.Location = new System.Drawing.Point(11, 73);
+            this.groupBox2.Location = new System.Drawing.Point(11, 92);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(580, 55);
             this.groupBox2.TabIndex = 1;
@@ -156,7 +159,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.textBoxInpPath);
             this.groupBox1.Controls.Add(this.buttonInpPath);
-            this.groupBox1.Location = new System.Drawing.Point(11, 12);
+            this.groupBox1.Location = new System.Drawing.Point(11, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(580, 55);
             this.groupBox1.TabIndex = 0;
@@ -193,14 +196,14 @@
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seleciona,
             this.Nome});
-            this.dataGridView.Location = new System.Drawing.Point(11, 134);
+            this.dataGridView.Location = new System.Drawing.Point(11, 153);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(774, 286);
+            this.dataGridView.Size = new System.Drawing.Size(774, 267);
             this.dataGridView.TabIndex = 4;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
@@ -243,7 +246,7 @@
             // 
             this.groupBoxVersao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxVersao.Controls.Add(this.comboBoxVersao);
-            this.groupBoxVersao.Location = new System.Drawing.Point(597, 12);
+            this.groupBoxVersao.Location = new System.Drawing.Point(597, 31);
             this.groupBoxVersao.Name = "groupBoxVersao";
             this.groupBoxVersao.Size = new System.Drawing.Size(188, 55);
             this.groupBoxVersao.TabIndex = 2;
@@ -254,7 +257,7 @@
             // 
             this.groupBoxCompressao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxCompressao.Controls.Add(this.comboBoxCompressao);
-            this.groupBoxCompressao.Location = new System.Drawing.Point(597, 73);
+            this.groupBoxCompressao.Location = new System.Drawing.Point(597, 92);
             this.groupBoxCompressao.Name = "groupBoxCompressao";
             this.groupBoxCompressao.Size = new System.Drawing.Size(188, 55);
             this.groupBoxCompressao.TabIndex = 3;
@@ -276,6 +279,24 @@
             this.comboBoxCompressao.Size = new System.Drawing.Size(176, 24);
             this.comboBoxCompressao.TabIndex = 23;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ajudaToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(798, 28);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ajudaToolStripMenuItem
+            // 
+            this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
+            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.ajudaToolStripMenuItem.Text = "Ajuda";
+            this.ajudaToolStripMenuItem.Click += new System.EventHandler(this.ajudaToolStripMenuItem_Click);
+            // 
             // FormComprimir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -289,7 +310,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormComprimir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comprimir PDFs";
@@ -304,7 +327,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupBoxVersao.ResumeLayout(false);
             this.groupBoxCompressao.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -328,5 +354,7 @@
         private System.Windows.Forms.GroupBox groupBoxVersao;
         private System.Windows.Forms.GroupBox groupBoxCompressao;
         private System.Windows.Forms.ComboBox comboBoxCompressao;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
     }
 }

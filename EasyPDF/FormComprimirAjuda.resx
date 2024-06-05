@@ -117,15 +117,80 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Seleciona.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Nome.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Os arquivos PDF (Portable Document Format) passaram por várias versões ao longo dos anos, cada uma trazendo novas funcionalidades e melhorias. Aqui estão as principais diferenças entre as versões PDF 1.2 a 1.7:
+
+PDF 1.2 (1996)
+Introduzido com Acrobat 3.0
+Suporte para links internos e externos.
+Imagens JPEG podem ser incorporadas diretamente, permitindo uma compressão mais eficiente.
+Melhorias na maneira como as fontes são incorporadas e gerenciadas.
+
+PDF 1.3 (1999)
+Introduzido com Acrobat 4.0
+Suporte para camadas (OCG - Optional Content Groups).
+Formulários PDF foram introduzidos, permitindo interatividade.
+Melhorias no suporte a transparência em imagens.
+Introdução de anotações para revisões e comentários.
+
+PDF 1.4 (2001)
+Introduzido com Acrobat 5.0
+Suporte completo para transparências e efeitos de mistura (blend modes).
+Melhorias significativas na segurança e nos recursos criptográficos.
+Introdução de metadados XMP (Extensible Metadata Platform) para descrever o conteúdo do PDF.
+
+PDF 1.5 (2003)
+Introduzido com Acrobat 6.0
+Suporte para camadas opcionalmente visíveis (Optional Content Groups - OCG).
+Introdução do conceito de objetos comprimidos (object streams) para reduzir o tamanho do arquivo.
+Melhorias no manuseio de anexos dentro de PDFs.
+
+PDF 1.6 (2004)
+Introduzido com Acrobat 7.0
+Suporte para anexos de arquivos dentro de PDFs.
+Melhorias na maneira como os objetos 3D são integrados e visualizados.
+Expansão no uso de metadados XMP, permitindo uma melhor indexação e pesquisa de conteúdo.
+
+PDF 1.7 (2006)
+Introduzido com Acrobat 8.0 e padronizado pela ISO em 2008 como ISO 32000-1
+Inclusão do suporte a JavaScript mais avançado para interatividade.
+Melhorias significativas na criptação e na segurança dos documentos.
+Introdução de portfólios PDF, permitindo a inclusão de múltiplos documentos em um único arquivo PDF.
+Suporte para multimídia embutida (vídeo e áudio) com capacidades de reprodução avançadas.
+
+Cada uma dessas versões adicionou novas funcionalidades que expandiram as capacidades dos PDFs, tornando-os mais versáteis e eficientes para diversas aplicações. Ao escolher uma versão para uso, é importante considerar as necessidades específicas do documento e a compatibilidade com os visualizadores de PDF que serão usados.</value>
+  </data>
+  <data name="richTextBox2.Text" xml:space="preserve">
+    <value>Compressão Padrão (DEFAULT_COMPRESSION)
+Descrição: Utiliza a configuração de compressão padrão do software ou da biblioteca que está sendo usada.
+Equilíbrio: Normalmente, é um compromisso equilibrado entre a velocidade de compressão e a taxa de compressão (redução do tamanho do arquivo).
+Uso Comum: É a escolha padrão quando não há necessidade específica de otimizar para tamanho ou velocidade.
+
+Sem Compressão (NO_COMPRESSION)
+Descrição: Nenhuma compressão é aplicada aos dados.
+Velocidade: A mais rápida em termos de tempo de processamento, pois os dados não são comprimidos.
+Tamanho do Arquivo: Produz os maiores arquivos, pois os dados são armazenados em seu formato original, sem compressão.
+Uso Comum: Utilizado quando a velocidade de acesso e a integridade dos dados são mais importantes do que o tamanho do arquivo, ou quando o armazenamento não é uma preocupação.
+
+Compressão Rápida (BEST_SPEED)
+Descrição: Configuração que prioriza a velocidade de compressão em detrimento da taxa de compressão.
+Velocidade: Muito rápida na compressão, mas a taxa de compressão é menor, resultando em arquivos maiores do que aqueles comprimidos com configurações mais agressivas.
+Uso Comum: Ideal quando a velocidade é crucial, por exemplo, em processos que exigem compressão em tempo real ou quando a capacidade de armazenamento é abundante.
+
+Melhor Compressão (BEST_COMPRESSION)
+Descrição: Configuração que prioriza a taxa de compressão, resultando no menor tamanho de arquivo possível.
+Velocidade: Mais lenta na compressão, pois aplica algoritmos mais complexos para reduzir o tamanho do arquivo ao máximo.
+Tamanho do Arquivo: Produz os menores arquivos, economizando espaço de armazenamento.
+Uso Comum: Utilizado quando a economia de espaço é crucial e a velocidade de compressão é menos importante, como no armazenamento de longo prazo ou em ambientes com capacidade de armazenamento limitada.
+
+Resumo Comparativo
+Compressão Padrão: Configuração equilibrada; boa combinação de velocidade e eficiência de compressão.
+Sem Compressão: Sem compressão; máxima velocidade, maior tamanho de arquivo.
+Compressão Rápida: Máxima velocidade de compressão; menor eficiência de compressão, resultando em arquivos maiores.
+Melhor Compressão: Máxima eficiência de compressão; menor tamanho de arquivo, maior tempo de compressão.
+
+A escolha entre essas opções depende do contexto específico em que a compressão está sendo usada e das prioridades do usuário (velocidade vs. tamanho do arquivo).</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

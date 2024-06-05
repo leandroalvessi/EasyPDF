@@ -167,6 +167,12 @@
     <Compile Include="FormComprimir.Designer.cs">
       <DependentUpon>FormComprimir.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormComprimirAjuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormComprimirAjuda.Designer.cs">
+      <DependentUpon>FormComprimirAjuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPdfRemoveOrderPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormComprimir.resx">
       <DependentUpon>FormComprimir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormComprimirAjuda.resx">
+      <DependentUpon>FormComprimirAjuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPdfRemoveOrderPage.resx">
       <DependentUpon>FormPdfRemoveOrderPage.cs</DependentUpon>

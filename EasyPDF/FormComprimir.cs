@@ -150,7 +150,6 @@ namespace EasyPDF
                                         copy.CompressionLevel = PdfStream.BEST_COMPRESSION;
                                         break;
                                 }
-                                copy.CompressionLevel = PdfStream.BEST_COMPRESSION;
 
                                 // Open document
                                 document.Open();
@@ -191,6 +190,12 @@ namespace EasyPDF
                 bool isChecked = (bool)checkBoxCell.Value;
                 checkBoxCell.Value = !isChecked;
             }
+        }
+
+        private void ajudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormComprimirAjuda formComprimirAjuda = new FormComprimirAjuda();
+            formComprimirAjuda.ShowDialog();
         }
     }
 }
