@@ -52,14 +52,13 @@ namespace EasyPDF
                     button1.Enabled = true;
                     button2.Enabled = true;
                     button3.Enabled = true;
-                    richTextBoxLicense.Text = "Licença ativada.";
+                    richTextBoxLicense.Text = "Licença ativada." + "\n" + validationResult.mensagem;
                 }
                 else
                 {
                     if (validationResult.codigoError == 2)
                     {
-                        richTextBoxLicense.Text = "A licença expirou em " + $"{validationResult.dataFimLicenca.ToString("dd/MM/yyyy")}" + ". Por favor, entre em contato com o administrador.";
-
+                        richTextBoxLicense.Text = "A licença expirou em " + $"{validationResult.dataFimLicenca.ToString("dd/MM/yyyy")}" + ". Por favor, entre em contato com o administrador." + "\n" + validationResult.mensagem;
                     }
                     else if (validationResult.codigoError == 1)
                     {
