@@ -32,7 +32,7 @@ namespace EasyPDF
 
         private void FormPrincipal_Shown(object sender, EventArgs e)
         {
-            HabilitarCamposLisenca();
+            //HabilitarCamposLisenca();
         }
 
         private void HabilitarCamposLisenca()
@@ -76,6 +76,12 @@ namespace EasyPDF
             {
                 richTextBoxLicense.Text = "Você não está conectado à internet. O sistema precisa de uma conexão com a internet para validar a licença com o servidor. Por favor, conecte-se à internet para utilizar o sistema.";
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormComprimir formComprimir = new FormComprimir();
+            formComprimir.ShowDialog();
         }
     }
 }

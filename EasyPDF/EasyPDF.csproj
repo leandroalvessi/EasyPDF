@@ -58,6 +58,12 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -155,6 +161,12 @@
     <Compile Include="Controllers\ConnectionDB.cs" />
     <Compile Include="Controllers\InternetChecker.cs" />
     <Compile Include="Controllers\LicenseValidator.cs" />
+    <Compile Include="FormComprimir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormComprimir.Designer.cs">
+      <DependentUpon>FormComprimir.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPdfRemoveOrderPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +188,9 @@
     <Compile Include="Controllers\HardwareInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormComprimir.resx">
+      <DependentUpon>FormComprimir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPdfRemoveOrderPage.resx">
       <DependentUpon>FormPdfRemoveOrderPage.cs</DependentUpon>
     </EmbeddedResource>

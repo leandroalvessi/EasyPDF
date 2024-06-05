@@ -45,7 +45,6 @@
             this.textBoxMergePDF = new System.Windows.Forms.TextBox();
             this.groupBoxSequencia = new System.Windows.Forms.GroupBox();
             this.numericUpDownSequencia = new System.Windows.Forms.NumericUpDown();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -278,6 +277,5 @@
         private System.Windows.Forms.NumericUpDown numericUpDownSequencia;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Seleciona;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

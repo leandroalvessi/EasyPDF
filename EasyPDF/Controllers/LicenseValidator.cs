@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EasyPDF.Controllers
 {
@@ -19,9 +20,10 @@ namespace EasyPDF.Controllers
             _connectionString = connectionString;
         }
 
-        public (bool isValid, int codigoError, DateTime dataFimLicenca) ValidateAndUpdateHardwareId(string hardwareId)
+        public (bool isValid, int codigoError, DateTime dataFimLicenca, string mensagem) ValidateAndUpdateHardwareId(string hardwareId)
         {
             DateTime dataFimLicenca = DateTime.MinValue;
+            string mensagem = null;
             try
             {
                 using (var conn = new NpgsqlConnection(_connectionString))
@@ -29,31 +31,16 @@ namespace EasyPDF.Controllers
                     conn.Open();
 
                     using (var cmd = new NpgsqlCommand(@"
-                WITH updated_row AS (
-                    UPDATE licenses
-                    SET access_count = access_count + 1
-                    WHERE hardware_id = @hardwareId
-                    RETURNING nome, datainicio, datafimlicenca, access_count
-                )
-                SELECT 
-                    CASE 
-                        WHEN EXISTS (SELECT 1 FROM updated_row) THEN
-                            true
-                        ELSE
-                            false
-                    END AS isValid,
-                    CASE 
-                        WHEN EXISTS (SELECT 1 FROM updated_row) THEN
-                            0 -- No error
-                        ELSE
-                            1 -- Error code 1: Não encontrado
-                    END AS codigoError,
-                    CASE 
-                        WHEN EXISTS (SELECT 1 FROM updated_row) THEN
-                            (SELECT datafimlicenca FROM updated_row) -- Retorna datafimlicenca se encontrado
-                        ELSE
-                            NULL -- Retorna NULL se não encontrado
-                    END AS dataFimLicenca;", conn))
+                        WITH updated_row AS (
+                            UPDATE licenses
+                            SET access_count = access_count + 1
+                            WHERE hardware_id = @hardwareId
+                            RETURNING nome, datainicio, datafimlicenca, access_count, mensagem
+                        )
+                        SELECT 
+                            mensagem,
+                            datafimlicenca
+                        FROM updated_row;", conn))
                     {
                         cmd.Parameters.AddWithValue("hardwareId", hardwareId);
 
@@ -61,15 +48,28 @@ namespace EasyPDF.Controllers
                         {
                             if (reader.Read())
                             {
-                                bool isValid = reader.GetBoolean(reader.GetOrdinal("isValid"));
-                                int codigoError = reader.GetInt32(reader.GetOrdinal("codigoError"));
-                                dataFimLicenca = reader.GetDateTime(reader.GetOrdinal("dataFimLicenca"));
+                                if (!reader.IsDBNull(reader.GetOrdinal("datafimlicenca")))
+                                {
+                                    dataFimLicenca = reader.GetDateTime(reader.GetOrdinal("datafimlicenca"));
+                                }
 
-                                return (isValid, codigoError, dataFimLicenca);
+                                if (!reader.IsDBNull(reader.GetOrdinal("mensagem")))
+                                {
+                                    mensagem = reader.GetString(reader.GetOrdinal("mensagem"));
+                                }
+
+                                if (dataFimLicenca < DateTime.Now)
+                                {
+                                    return (false, 2, dataFimLicenca, mensagem ?? "Licença expirada.");
+                                }
+                                else
+                                {
+                                    return (true, 0, dataFimLicenca, mensagem ?? "Licença válida.");
+                                }
                             }
                             else
                             {
-                                return (false, 1, dataFimLicenca);
+                                return (false, 1, dataFimLicenca, "Hardware ID não encontrado.");
                             }
                         }
                     }
@@ -77,11 +77,10 @@ namespace EasyPDF.Controllers
             }
             catch (Exception ex)
             {
-                // Em caso de exceção
-                return (false, 99, dataFimLicenca); // Error code 99: Erro desconhecido
+                // Em caso de exceção, podemos também incluir a mensagem do erro para depuração
+                return (false, 99, dataFimLicenca, "Erro desconhecido: " + ex.Message);
             }
         }
-
 
         public void RegisterHardwareId(string hardwareId)
         {

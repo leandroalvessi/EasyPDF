@@ -33,6 +33,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.groupBoxPainel = new System.Windows.Forms.GroupBox();
             this.richTextBoxLicense = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBoxPainel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +42,7 @@
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(15, 12);
+            this.button2.Location = new System.Drawing.Point(9, 84);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(455, 66);
             this.button2.TabIndex = 2;
@@ -54,7 +55,7 @@
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(15, 84);
+            this.button3.Location = new System.Drawing.Point(9, 156);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(455, 66);
             this.button3.TabIndex = 4;
@@ -67,7 +68,7 @@
             this.groupBoxPainel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxPainel.Controls.Add(this.richTextBoxLicense);
-            this.groupBoxPainel.Location = new System.Drawing.Point(15, 156);
+            this.groupBoxPainel.Location = new System.Drawing.Point(15, 231);
             this.groupBoxPainel.Name = "groupBoxPainel";
             this.groupBoxPainel.Size = new System.Drawing.Size(455, 135);
             this.groupBoxPainel.TabIndex = 6;
@@ -85,11 +86,24 @@
             this.richTextBoxLicense.TabIndex = 6;
             this.richTextBoxLicense.Text = "Aguarde... carregamento de dados em progresso.";
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(9, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(455, 66);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Comprimir PDFs";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 303);
+            this.ClientSize = new System.Drawing.Size(482, 378);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBoxPainel);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -108,5 +122,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBoxPainel;
         private System.Windows.Forms.RichTextBox richTextBoxLicense;
+        private System.Windows.Forms.Button button1;
     }
 }
