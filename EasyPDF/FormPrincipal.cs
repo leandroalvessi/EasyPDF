@@ -63,7 +63,7 @@ namespace EasyPDF
                 {
                     if (validationResult.codigoError == 2)
                     {
-                        richTextBoxLicense.Text = "A licença expirou em " + $"{validationResult.dataFimLicenca.ToString("dd/MM/yyyy")}" + ". Por favor, entre em contato com o administrador." + "\n" + validationResult.mensagem;
+                        richTextBoxLicense.Text = "A licença expirou em " + $"{validationResult.dataFimLicenca.ToString("dd/MM/yyyy")}" + ". Por favor, entre em contato com o administrador.";
                     }
                     else
                     {
