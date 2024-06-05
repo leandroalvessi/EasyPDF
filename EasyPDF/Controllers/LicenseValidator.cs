@@ -24,23 +24,25 @@ namespace EasyPDF.Controllers
         {
             DateTime dataFimLicenca = DateTime.MinValue;
             string mensagem = null;
+
             try
             {
                 using (var conn = new NpgsqlConnection(_connectionString))
                 {
                     conn.Open();
 
+                    // Perform the update and select operation
                     using (var cmd = new NpgsqlCommand(@"
-                        WITH updated_row AS (
-                            UPDATE licenses
-                            SET access_count = access_count + 1
-                            WHERE hardware_id = @hardwareId
-                            RETURNING nome, datainicio, datafimlicenca, access_count, mensagem
-                        )
-                        SELECT 
-                            mensagem,
-                            datafimlicenca
-                        FROM updated_row;", conn))
+                    WITH updated_row AS (
+                        UPDATE licenses
+                        SET access_count = access_count + 1
+                        WHERE hardware_id = @hardwareId
+                        RETURNING nome, datainicio, datafimlicenca, access_count, mensagem
+                    )
+                    SELECT 
+                        mensagem,
+                        datafimlicenca
+                    FROM updated_row;", conn))
                     {
                         cmd.Parameters.AddWithValue("hardwareId", hardwareId);
 
@@ -67,11 +69,22 @@ namespace EasyPDF.Controllers
                                     return (true, 0, dataFimLicenca, mensagem);
                                 }
                             }
-                            else
-                            {
-                                return (false, 1, dataFimLicenca, "Hardware ID não encontrado.");
-                            }
                         }
+                    }
+
+                    // If no rows were updated, perform the insert operation
+                    using (var insertCmd = new NpgsqlCommand(@"
+                    INSERT INTO licenses (hardware_id, access_count, datainicio, datafimlicenca, mensagem)
+                    VALUES (@hardwareId, 1, @datainicio, @dataFimLicenca, @mensagem);", conn))
+                    {
+                        insertCmd.Parameters.AddWithValue("hardwareId", hardwareId);
+                        insertCmd.Parameters.AddWithValue("datainicio", DateTime.Now);
+                        insertCmd.Parameters.AddWithValue("dataFimLicenca", DateTime.Now.AddDays(7)); // Licença válida por 7 dias
+                        insertCmd.Parameters.AddWithValue("mensagem", "Licença válida por 7 dias."); // Mensagem padrão
+
+                        insertCmd.ExecuteNonQuery();
+
+                        return (true, 0, DateTime.Now.AddDays(7), "Licença válida por 7 dias.");
                     }
                 }
             }
@@ -81,7 +94,6 @@ namespace EasyPDF.Controllers
                 return (false, 99, dataFimLicenca, "Erro desconhecido: " + ex.Message);
             }
         }
-
         public void RegisterHardwareId(string hardwareId)
         {
             try
