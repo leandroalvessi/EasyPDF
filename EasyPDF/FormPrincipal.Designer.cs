@@ -72,7 +72,7 @@
             this.groupBoxPainel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxPainel.Controls.Add(this.richTextBoxLicense);
-            this.groupBoxPainel.Location = new System.Drawing.Point(12, 321);
+            this.groupBoxPainel.Location = new System.Drawing.Point(12, 246);
             this.groupBoxPainel.Name = "groupBoxPainel";
             this.groupBoxPainel.Size = new System.Drawing.Size(455, 138);
             this.groupBoxPainel.TabIndex = 6;
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 471);
+            this.ClientSize = new System.Drawing.Size(482, 396);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBoxPainel);
             this.Controls.Add(this.button3);
