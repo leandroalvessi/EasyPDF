@@ -20,10 +20,12 @@ namespace EasyPDF.Controllers
             _connectionString = connectionString;
         }
 
-        public (bool isValid, int codigoError, DateTime dataFimLicenca, string mensagem) ValidateAndUpdateHardwareId(string hardwareId)
+        public (bool isValid, int codigoError, DateTime datainicio, DateTime dataFimLicenca, string nome, string mensagem) ValidateAndUpdateHardwareId(string hardwareId)
         {
             DateTime dataFimLicenca = DateTime.MinValue;
+            DateTime datainicio = DateTime.MinValue;
             string mensagem = null;
+            string nome = null;
 
             try
             {
@@ -40,7 +42,9 @@ namespace EasyPDF.Controllers
                         RETURNING nome, datainicio, datafimlicenca, access_count, mensagem
                     )
                     SELECT 
+                        nome,
                         mensagem,
+                        datainicio,
                         datafimlicenca
                     FROM updated_row;", conn))
                     {
@@ -50,9 +54,19 @@ namespace EasyPDF.Controllers
                         {
                             if (reader.Read())
                             {
+                                if (!reader.IsDBNull(reader.GetOrdinal("datainicio")))
+                                {
+                                    datainicio = reader.GetDateTime(reader.GetOrdinal("datainicio"));
+                                }
+
                                 if (!reader.IsDBNull(reader.GetOrdinal("datafimlicenca")))
                                 {
                                     dataFimLicenca = reader.GetDateTime(reader.GetOrdinal("datafimlicenca"));
+                                }
+
+                                if (!reader.IsDBNull(reader.GetOrdinal("nome")))
+                                {
+                                    nome = reader.GetString(reader.GetOrdinal("nome"));
                                 }
 
                                 if (!reader.IsDBNull(reader.GetOrdinal("mensagem")))
@@ -62,11 +76,11 @@ namespace EasyPDF.Controllers
 
                                 if (dataFimLicenca < DateTime.Now)
                                 {
-                                    return (false, 2, dataFimLicenca, mensagem);
+                                    return (false, 2, datainicio, dataFimLicenca, nome, mensagem);
                                 }
                                 else
                                 {
-                                    return (true, 0, dataFimLicenca, mensagem);
+                                    return (true, 0, datainicio, dataFimLicenca, nome, mensagem);
                                 }
                             }
                         }
@@ -74,24 +88,25 @@ namespace EasyPDF.Controllers
 
                     // If no rows were updated, perform the insert operation
                     using (var insertCmd = new NpgsqlCommand(@"
-                    INSERT INTO licenses (hardware_id, access_count, datainicio, datafimlicenca, mensagem)
-                    VALUES (@hardwareId, 1, @datainicio, @dataFimLicenca, @mensagem);", conn))
+                    INSERT INTO licenses (hardware_id, access_count, datainicio, datafimlicenca, nome, mensagem)
+                    VALUES (@hardwareId, 1, @datainicio, @dataFimLicenca, @nome, @mensagem);", conn))
                     {
                         insertCmd.Parameters.AddWithValue("hardwareId", hardwareId);
                         insertCmd.Parameters.AddWithValue("datainicio", DateTime.Now);
                         insertCmd.Parameters.AddWithValue("dataFimLicenca", DateTime.Now.AddDays(7)); // Licença válida por 7 dias
+                        insertCmd.Parameters.AddWithValue("nome", Environment.MachineName);
                         insertCmd.Parameters.AddWithValue("mensagem", "Licença válida por 7 dias."); // Mensagem padrão
 
                         insertCmd.ExecuteNonQuery();
 
-                        return (true, 0, DateTime.Now.AddDays(7), "Licença válida por 7 dias.");
+                        return (true, 0, DateTime.Now, DateTime.Now.AddDays(7), nome, "Licença válida por 7 dias.");
                     }
                 }
             }
             catch (Exception ex)
             {
                 // Em caso de exceção, podemos também incluir a mensagem do erro para depuração
-                return (false, 99, dataFimLicenca, "Erro desconhecido: " + ex.Message);
+                return (false, 99, DateTime.MinValue, DateTime.MinValue, "", "Erro desconhecido: " + ex.Message);
             }
         }
         public void RegisterHardwareId(string hardwareId)

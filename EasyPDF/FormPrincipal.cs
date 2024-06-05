@@ -77,5 +77,11 @@ namespace EasyPDF
             FormComprimir formComprimir = new FormComprimir();
             formComprimir.ShowDialog();
         }
+
+        private void testeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSobre formSobre = new FormSobre();
+            formSobre.ShowDialog();
+        }
     }
 }
