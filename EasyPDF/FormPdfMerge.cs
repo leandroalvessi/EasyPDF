@@ -133,24 +133,24 @@ namespace EasyPDF
 
         private void buttonMesclar_Click(object sender, EventArgs e)
         {
-            List<string> imagePathList = new List<string>();
+            List<string> filePathList = new List<string>();
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
                 if (Convert.ToBoolean(row.Cells["Seleciona"].Value))
                 {
-                    string imagePath = Path.Combine(textBoxInpPath.Text, row.Cells["Nome"].Value.ToString());
-                    imagePathList.Add(imagePath);
+                    string filePath = Path.Combine(textBoxInpPath.Text, row.Cells["Nome"].Value.ToString());
+                    filePathList.Add(filePath);
                 }
             }
 
-            if (imagePathList.Count > 1)
+            if (filePathList.Count > 1)
             {
-                string[] imagePaths = imagePathList.ToArray();
+                string[] filePaths = filePathList.ToArray();
                 string outputPdfPath = textBoxOutPath.Text;
 
-                if (imagePaths.Length > 0 && !string.IsNullOrWhiteSpace(outputPdfPath))
+                if (filePaths.Length > 0 && !string.IsNullOrWhiteSpace(outputPdfPath))
                 {
-                    MergePdfFiles(imagePaths, textBoxMergePDF.Text + "_" + numericUpDownSequencia.Value.ToString("0000") + ".pdf");
+                    MergePdfFiles(filePaths, textBoxMergePDF.Text + "_" + numericUpDownSequencia.Value.ToString("0000") + ".pdf");
                     numericUpDownSequencia.Value += 1;
                 }
                 else

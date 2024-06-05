@@ -73,9 +73,9 @@ namespace EasyPDF
                 {
                     if (Convert.ToBoolean(row.Cells["Seleciona"].Value))
                     {
-                        string imagePath = Path.Combine(textBoxInpPath.Text, row.Cells["Nome"].Value.ToString());
-                        string imageOutPath = Path.Combine(textBoxOutPath.Text, row.Cells["Nome"].Value.ToString().Replace(".pdf", "") + "_" + textBoxMergePDF.Text + "_" + numericUpDownSequencia.Value.ToString("0000") + ".pdf");
-                        CompressPdfFile(imagePath, imageOutPath);
+                        string filePath = Path.Combine(textBoxInpPath.Text, row.Cells["Nome"].Value.ToString());
+                        string fileOutPath = Path.Combine(textBoxOutPath.Text, row.Cells["Nome"].Value.ToString().Replace(".pdf", "") + "_" + textBoxMergePDF.Text + "_" + numericUpDownSequencia.Value.ToString("0000") + ".pdf");
+                        CompressPdfFile(filePath, fileOutPath);
                     }
                 }
                 MessageBox.Show($"PDF comprimido com sucesso em: {textBoxOutPath.Text}");

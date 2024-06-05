@@ -32,7 +32,7 @@ namespace EasyPDF
 
         private void FormPrincipal_Shown(object sender, EventArgs e)
         {
-            //HabilitarCamposLisenca();
+            HabilitarCamposLisenca();
         }
 
         private void HabilitarCamposLisenca()
@@ -40,8 +40,6 @@ namespace EasyPDF
             string HardwareId = HardwareInfo.GetHardwareId();
 
             LicenseValidator validator = new LicenseValidator(ConnectionDB.ConnectionString());
-
-            //validator.CreateLicensesTable();
 
             string hardwareId = HardwareInfo.GetHardwareId();
             richTextBoxLicense.Text = hardwareId;
@@ -51,6 +49,7 @@ namespace EasyPDF
                 var validationResult = validator.ValidateAndUpdateHardwareId(hardwareId);
                 if (validationResult.isValid)
                 {
+                    button1.Enabled = true;
                     button2.Enabled = true;
                     button3.Enabled = true;
                     richTextBoxLicense.Text = "Licença ativada.";
