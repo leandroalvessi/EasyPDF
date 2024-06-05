@@ -13,6 +13,9 @@ namespace EasyPDF
 {
     public partial class FormPrincipal : Form
     {
+        string Nome;
+        DateTime dataFimLicenca;
+        DateTime datainicio;
         public FormPrincipal()
         {
             InitializeComponent();
@@ -34,7 +37,6 @@ namespace EasyPDF
         {
             HabilitarCamposLisenca();
         }
-
         private void HabilitarCamposLisenca()
         {
             string HardwareId = HardwareInfo.GetHardwareId();
@@ -53,6 +55,9 @@ namespace EasyPDF
                     button2.Enabled = true;
                     button3.Enabled = true;
                     richTextBoxLicense.Text = validationResult.mensagem;
+                    this.Nome = validationResult.nome;
+                    this.datainicio = validationResult.datainicio;
+                    this.dataFimLicenca = validationResult.dataFimLicenca;
                 }
                 else
                 {
@@ -80,7 +85,7 @@ namespace EasyPDF
 
         private void testeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormSobre formSobre = new FormSobre();
+            FormSobre formSobre = new FormSobre(this.Nome, this.datainicio, this.dataFimLicenca);
             formSobre.ShowDialog();
         }
     }

@@ -93,13 +93,13 @@ namespace EasyPDF.Controllers
                     {
                         insertCmd.Parameters.AddWithValue("hardwareId", hardwareId);
                         insertCmd.Parameters.AddWithValue("datainicio", DateTime.Now);
-                        insertCmd.Parameters.AddWithValue("dataFimLicenca", DateTime.Now.AddDays(7)); // Licença válida por 7 dias
+                        insertCmd.Parameters.AddWithValue("dataFimLicenca", DateTime.Now.AddDays(7).Date.AddHours(23).AddMinutes(59).AddSeconds(59)); // Licença válida por 7 dias
                         insertCmd.Parameters.AddWithValue("nome", Environment.MachineName);
                         insertCmd.Parameters.AddWithValue("mensagem", "Licença válida por 7 dias."); // Mensagem padrão
 
                         insertCmd.ExecuteNonQuery();
 
-                        return (true, 0, DateTime.Now, DateTime.Now.AddDays(7), nome, "Licença válida por 7 dias.");
+                        return (true, 0, DateTime.Now, DateTime.Now.AddDays(7).Date.AddHours(23).AddMinutes(59).AddSeconds(59), Environment.MachineName, "Licença válida por 7 dias.");
                     }
                 }
             }
