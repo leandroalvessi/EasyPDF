@@ -59,6 +59,7 @@
             // 
             // groupBoxSequencia
             // 
+            this.groupBoxSequencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxSequencia.Controls.Add(this.numericUpDownSequencia);
             this.groupBoxSequencia.Location = new System.Drawing.Point(693, 426);
             this.groupBoxSequencia.Name = "groupBoxSequencia";
@@ -84,6 +85,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.textBoxMergePDF);
             this.groupBox3.Location = new System.Drawing.Point(108, 426);
             this.groupBox3.Name = "groupBox3";
@@ -105,6 +108,7 @@
             // 
             // buttonComprimir
             // 
+            this.buttonComprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonComprimir.Location = new System.Drawing.Point(11, 432);
             this.buttonComprimir.Name = "buttonComprimir";
             this.buttonComprimir.Size = new System.Drawing.Size(91, 49);
@@ -115,11 +119,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.textBoxOutPath);
             this.groupBox2.Controls.Add(this.buttonOutPath);
             this.groupBox2.Location = new System.Drawing.Point(11, 73);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(610, 55);
+            this.groupBox2.Size = new System.Drawing.Size(580, 55);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Diretório para salvar";
@@ -131,7 +137,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxOutPath.Location = new System.Drawing.Point(103, 21);
             this.textBoxOutPath.Name = "textBoxOutPath";
-            this.textBoxOutPath.Size = new System.Drawing.Size(501, 22);
+            this.textBoxOutPath.Size = new System.Drawing.Size(471, 22);
             this.textBoxOutPath.TabIndex = 3;
             // 
             // buttonOutPath
@@ -146,11 +152,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.textBoxInpPath);
             this.groupBox1.Controls.Add(this.buttonInpPath);
             this.groupBox1.Location = new System.Drawing.Point(11, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(610, 55);
+            this.groupBox1.Size = new System.Drawing.Size(580, 55);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Diretório dos arquivos";
@@ -162,7 +170,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxInpPath.Location = new System.Drawing.Point(103, 21);
             this.textBoxInpPath.Name = "textBoxInpPath";
-            this.textBoxInpPath.Size = new System.Drawing.Size(501, 22);
+            this.textBoxInpPath.Size = new System.Drawing.Size(471, 22);
             this.textBoxInpPath.TabIndex = 1;
             // 
             // buttonInpPath
@@ -228,25 +236,27 @@
             "PDF 1.7"});
             this.comboBoxVersao.Location = new System.Drawing.Point(6, 20);
             this.comboBoxVersao.Name = "comboBoxVersao";
-            this.comboBoxVersao.Size = new System.Drawing.Size(146, 24);
+            this.comboBoxVersao.Size = new System.Drawing.Size(176, 24);
             this.comboBoxVersao.TabIndex = 23;
             // 
             // groupBoxVersao
             // 
+            this.groupBoxVersao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxVersao.Controls.Add(this.comboBoxVersao);
-            this.groupBoxVersao.Location = new System.Drawing.Point(627, 12);
+            this.groupBoxVersao.Location = new System.Drawing.Point(597, 12);
             this.groupBoxVersao.Name = "groupBoxVersao";
-            this.groupBoxVersao.Size = new System.Drawing.Size(158, 55);
+            this.groupBoxVersao.Size = new System.Drawing.Size(188, 55);
             this.groupBoxVersao.TabIndex = 2;
             this.groupBoxVersao.TabStop = false;
             this.groupBoxVersao.Text = "Versão PDF";
             // 
             // groupBoxCompressao
             // 
+            this.groupBoxCompressao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxCompressao.Controls.Add(this.comboBoxCompressao);
-            this.groupBoxCompressao.Location = new System.Drawing.Point(627, 73);
+            this.groupBoxCompressao.Location = new System.Drawing.Point(597, 73);
             this.groupBoxCompressao.Name = "groupBoxCompressao";
-            this.groupBoxCompressao.Size = new System.Drawing.Size(158, 55);
+            this.groupBoxCompressao.Size = new System.Drawing.Size(188, 55);
             this.groupBoxCompressao.TabIndex = 3;
             this.groupBoxCompressao.TabStop = false;
             this.groupBoxCompressao.Text = "Tipo Compressão";
@@ -263,7 +273,7 @@
             "Melhor Compressão"});
             this.comboBoxCompressao.Location = new System.Drawing.Point(6, 20);
             this.comboBoxCompressao.Name = "comboBoxCompressao";
-            this.comboBoxCompressao.Size = new System.Drawing.Size(146, 24);
+            this.comboBoxCompressao.Size = new System.Drawing.Size(176, 24);
             this.comboBoxCompressao.TabIndex = 23;
             // 
             // FormComprimir

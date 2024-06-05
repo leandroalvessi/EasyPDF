@@ -56,11 +56,12 @@
             // 
             // groupBoxSequencia
             // 
+            this.groupBoxSequencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxSequencia.Controls.Add(this.numericUpDownSequencia);
             this.groupBoxSequencia.Location = new System.Drawing.Point(632, 426);
             this.groupBoxSequencia.Name = "groupBoxSequencia";
-            this.groupBoxSequencia.Size = new System.Drawing.Size(90, 55);
-            this.groupBoxSequencia.TabIndex = 22;
+            this.groupBoxSequencia.Size = new System.Drawing.Size(92, 55);
+            this.groupBoxSequencia.TabIndex = 6;
             this.groupBoxSequencia.TabStop = false;
             this.groupBoxSequencia.Text = "Sequência";
             // 
@@ -71,7 +72,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDownSequencia.Location = new System.Drawing.Point(6, 21);
             this.numericUpDownSequencia.Name = "numericUpDownSequencia";
-            this.numericUpDownSequencia.Size = new System.Drawing.Size(78, 22);
+            this.numericUpDownSequencia.Size = new System.Drawing.Size(80, 22);
             this.numericUpDownSequencia.TabIndex = 9;
             this.numericUpDownSequencia.Value = new decimal(new int[] {
             1,
@@ -81,11 +82,13 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.textBoxMergePDF);
             this.groupBox3.Location = new System.Drawing.Point(109, 426);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(517, 55);
-            this.groupBox3.TabIndex = 21;
+            this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Salvar Arquivo";
             // 
@@ -102,23 +105,26 @@
             // 
             // buttonProcessar
             // 
+            this.buttonProcessar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonProcessar.Enabled = false;
             this.buttonProcessar.Location = new System.Drawing.Point(12, 432);
             this.buttonProcessar.Name = "buttonProcessar";
             this.buttonProcessar.Size = new System.Drawing.Size(91, 49);
-            this.buttonProcessar.TabIndex = 18;
+            this.buttonProcessar.TabIndex = 7;
             this.buttonProcessar.Text = "Processar";
             this.buttonProcessar.UseVisualStyleBackColor = true;
             this.buttonProcessar.Click += new System.EventHandler(this.buttonProcessar_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.textBoxOutPath);
             this.groupBox2.Controls.Add(this.buttonOutPath);
             this.groupBox2.Location = new System.Drawing.Point(12, 73);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(774, 55);
-            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Diretório para salvar";
             // 
@@ -144,12 +150,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.textBoxInpPath);
             this.groupBox1.Controls.Add(this.buttonInpPath);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(774, 55);
-            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Diretório dos arquivos";
             // 
@@ -191,8 +199,8 @@
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(710, 286);
-            this.dataGridView.TabIndex = 15;
+            this.dataGridView.Size = new System.Drawing.Size(712, 286);
+            this.dataGridView.TabIndex = 4;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewImagens_CellContentClick);
             this.dataGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridViewImagens_RowsAdded);
             // 
@@ -224,21 +232,23 @@
             // 
             // buttonBaixo
             // 
+            this.buttonBaixo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonBaixo.Image = global::EasyPDF.Properties.Resources.icons8_flecha_grossa_apontando_para_baixo_48;
             this.buttonBaixo.Location = new System.Drawing.Point(730, 215);
             this.buttonBaixo.Name = "buttonBaixo";
             this.buttonBaixo.Size = new System.Drawing.Size(58, 75);
-            this.buttonBaixo.TabIndex = 17;
+            this.buttonBaixo.TabIndex = 3;
             this.buttonBaixo.UseVisualStyleBackColor = true;
             this.buttonBaixo.Click += new System.EventHandler(this.buttonBaixo_Click);
             // 
             // buttonCima
             // 
+            this.buttonCima.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCima.Image = global::EasyPDF.Properties.Resources.icons8_flecha_grossa_apontando_para_cima_48;
             this.buttonCima.Location = new System.Drawing.Point(730, 134);
             this.buttonCima.Name = "buttonCima";
             this.buttonCima.Size = new System.Drawing.Size(58, 75);
-            this.buttonCima.TabIndex = 16;
+            this.buttonCima.TabIndex = 2;
             this.buttonCima.UseVisualStyleBackColor = true;
             this.buttonCima.Click += new System.EventHandler(this.buttonCima_Click);
             // 

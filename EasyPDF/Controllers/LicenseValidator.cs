@@ -60,11 +60,11 @@ namespace EasyPDF.Controllers
 
                                 if (dataFimLicenca < DateTime.Now)
                                 {
-                                    return (false, 2, dataFimLicenca, mensagem ?? "Licença expirada.");
+                                    return (false, 2, dataFimLicenca, mensagem);
                                 }
                                 else
                                 {
-                                    return (true, 0, dataFimLicenca, mensagem ?? "Licença válida.");
+                                    return (true, 0, dataFimLicenca, mensagem);
                                 }
                             }
                             else
