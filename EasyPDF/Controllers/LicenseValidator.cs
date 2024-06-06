@@ -86,22 +86,21 @@ namespace EasyPDF.Controllers
                         }
                     }
 
-                    int diasLicenca = 7; //or 365
+                    string MensagemBemVindo = "Bem-vindo ao EasyPDF! Este sistema foi criado para melhorar sua experiência, oferecendo ferramentas e recursos para otimizar suas tarefas diárias.";
 
-                    // If no rows were updated, perform the insert operation
                     using (var insertCmd = new NpgsqlCommand(@"
                     INSERT INTO licenses (hardware_id, access_count, datainicio, datafimlicenca, nome, mensagem)
                     VALUES (@hardwareId, 1, @datainicio, @dataFimLicenca, @nome, @mensagem);", conn))
                     {
                         insertCmd.Parameters.AddWithValue("hardwareId", hardwareId);
                         insertCmd.Parameters.AddWithValue("datainicio", DateTime.Now);
-                        insertCmd.Parameters.AddWithValue("dataFimLicenca", DateTime.Now.AddDays(diasLicenca).Date.AddHours(23).AddMinutes(59).AddSeconds(59)); // Licença válida por 7 dias
+                        insertCmd.Parameters.AddWithValue("dataFimLicenca", DateTime.Now.AddDays(7).Date.AddHours(23).AddMinutes(59).AddSeconds(59)); // Licença válida por 7 dias
                         insertCmd.Parameters.AddWithValue("nome", Environment.MachineName);
-                        insertCmd.Parameters.AddWithValue("mensagem", "Bem-vindo ao EasyPDF! Este sistema foi criado para melhorar sua experiência, oferecendo ferramentas e recursos para otimizar suas tarefas diárias."); // Mensagem padrão
+                        insertCmd.Parameters.AddWithValue("mensagem", MensagemBemVindo);
 
                         insertCmd.ExecuteNonQuery();
 
-                        return (true, 0, DateTime.Now, DateTime.Now.AddDays(diasLicenca).Date.AddHours(23).AddMinutes(59).AddSeconds(59), Environment.MachineName, $"Licença válida por {diasLicenca} dias.");
+                        return (true, 0, DateTime.Now, DateTime.Now.AddDays(7).Date.AddHours(23).AddMinutes(59).AddSeconds(59), Environment.MachineName, MensagemBemVindo);
                     }
                 }
             }
