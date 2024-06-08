@@ -36,8 +36,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button4 = new System.Windows.Forms.Button();
+            this.testeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxPainel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +89,7 @@
             this.richTextBoxLicense.Name = "richTextBoxLicense";
             this.richTextBoxLicense.ReadOnly = true;
             this.richTextBoxLicense.Size = new System.Drawing.Size(443, 111);
-            this.richTextBoxLicense.TabIndex = 3;
+            this.richTextBoxLicense.TabIndex = 4;
             this.richTextBoxLicense.Text = "Aguarde... carregamento de dados em progresso.";
             // 
             // button1
@@ -112,7 +112,7 @@
             this.sobreToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(482, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(482, 30);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -121,8 +121,21 @@
             this.sobreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.testeToolStripMenuItem});
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
             this.sobreToolStripMenuItem.Text = "Ajuda";
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Enabled = false;
+            this.button4.Location = new System.Drawing.Point(12, 247);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(455, 66);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Extrair Texto de PDFs";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // testeToolStripMenuItem
             // 
@@ -131,18 +144,6 @@
             this.testeToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.testeToolStripMenuItem.Text = "Sobre EasyPDF";
             this.testeToolStripMenuItem.Click += new System.EventHandler(this.testeToolStripMenuItem_Click);
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(12, 247);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(455, 66);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Extrair Texto de PDF";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // FormPrincipal
             // 

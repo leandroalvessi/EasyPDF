@@ -35,7 +35,7 @@ namespace EasyPDF
 
         private void FormPrincipal_Shown(object sender, EventArgs e)
         {
-            //HabilitarCamposLisenca();
+            HabilitarCamposLisenca();
         }
         private void HabilitarCamposLisenca()
         {
@@ -54,6 +54,7 @@ namespace EasyPDF
                     button1.Enabled = true;
                     button2.Enabled = true;
                     button3.Enabled = true;
+                    button4.Enabled = true;
                     richTextBoxLicense.Text = validationResult.mensagem;
                     this.Nome = validationResult.nome;
                     this.datainicio = validationResult.datainicio;
