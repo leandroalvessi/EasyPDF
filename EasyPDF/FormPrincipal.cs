@@ -35,7 +35,7 @@ namespace EasyPDF
 
         private void FormPrincipal_Shown(object sender, EventArgs e)
         {
-            HabilitarCamposLisenca();
+            //HabilitarCamposLisenca();
         }
         private void HabilitarCamposLisenca()
         {
@@ -87,6 +87,12 @@ namespace EasyPDF
         {
             FormSobre formSobre = new FormSobre(this.Nome, this.datainicio, this.dataFimLicenca);
             formSobre.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormExtrairTexto formExtrair = new FormExtrairTexto();
+            formExtrair.ShowDialog();
         }
     }
 }

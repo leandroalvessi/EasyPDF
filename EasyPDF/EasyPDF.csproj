@@ -28,7 +28,7 @@
     <ProductName>EasyPDF</ProductName>
     <PublisherName>Leandro Alves</PublisherName>
     <SuiteName>Leandro Alves</SuiteName>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -208,6 +208,12 @@
     <Compile Include="FormComprimirAjuda.Designer.cs">
       <DependentUpon>FormComprimirAjuda.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormExtrairTexto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExtrairTexto.Designer.cs">
+      <DependentUpon>FormExtrairTexto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPdfRemoveOrderPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormComprimirAjuda.resx">
       <DependentUpon>FormComprimirAjuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExtrairTexto.resx">
+      <DependentUpon>FormExtrairTexto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPdfRemoveOrderPage.resx">
       <DependentUpon>FormPdfRemoveOrderPage.cs</DependentUpon>

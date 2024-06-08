@@ -37,6 +37,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBoxPainel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +73,7 @@
             this.groupBoxPainel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxPainel.Controls.Add(this.richTextBoxLicense);
-            this.groupBoxPainel.Location = new System.Drawing.Point(12, 246);
+            this.groupBoxPainel.Location = new System.Drawing.Point(12, 317);
             this.groupBoxPainel.Name = "groupBoxPainel";
             this.groupBoxPainel.Size = new System.Drawing.Size(455, 138);
             this.groupBoxPainel.TabIndex = 6;
@@ -127,15 +128,28 @@
             // 
             this.testeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("testeToolStripMenuItem.Image")));
             this.testeToolStripMenuItem.Name = "testeToolStripMenuItem";
-            this.testeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.testeToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.testeToolStripMenuItem.Text = "Sobre EasyPDF";
             this.testeToolStripMenuItem.Click += new System.EventHandler(this.testeToolStripMenuItem_Click);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Location = new System.Drawing.Point(12, 247);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(455, 66);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Extrair Texto de PDF";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 396);
+            this.ClientSize = new System.Drawing.Size(482, 467);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBoxPainel);
             this.Controls.Add(this.button3);
@@ -164,5 +178,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem;
+        private System.Windows.Forms.Button button4;
     }
 }
