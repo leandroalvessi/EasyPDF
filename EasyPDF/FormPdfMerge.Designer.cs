@@ -201,7 +201,7 @@
             this.groupBox3.Size = new System.Drawing.Size(517, 55);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Salvar Arquivo";
+            this.groupBox3.Text = "Nome Arquivo";
             // 
             // textBoxMergePDF
             // 

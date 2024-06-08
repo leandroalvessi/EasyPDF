@@ -91,7 +91,7 @@
             this.groupBox3.Size = new System.Drawing.Size(579, 55);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Salvar Arquivo";
+            this.groupBox3.Text = "Nome Arquivo";
             // 
             // textBoxNomeArquivo
             // 
