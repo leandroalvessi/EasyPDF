@@ -1,17 +1,11 @@
 ﻿using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
-using Org.BouncyCastle.Asn1.Pkcs;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tesseract;
 
 namespace EasyPDF
 {
@@ -109,16 +103,6 @@ namespace EasyPDF
                         text.WriteLine(currentText);
                     }
                 }
-
-                // Extrair texto usando Tesseract
-                using (var tesseractEngine = new TesseractEngine("./tessdata", "por", EngineMode.Default))
-                {
-                    using (var pix = Pix.LoadFromFile(filePath))
-                    {
-                        var ocrResult = tesseractEngine.Process(pix);
-                        text.WriteLine(ocrResult.GetText());
-                    }
-                }
             }
             catch (Exception ex)
             {
@@ -163,6 +147,12 @@ namespace EasyPDF
             {
                 numericUpDownSequencia.Enabled = true;
             }
+        }
+
+        private void ajudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSobreExtrairTextoPDF formSobreExtrairTextoPDF = new FormSobreExtrairTextoPDF();
+            formSobreExtrairTextoPDF.ShowDialog();
         }
     }
 }
