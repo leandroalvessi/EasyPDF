@@ -124,7 +124,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 73);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(774, 55);
-            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Diretório para salvar";
             // 
@@ -136,14 +136,14 @@
             this.textBoxOutPath.Location = new System.Drawing.Point(103, 21);
             this.textBoxOutPath.Name = "textBoxOutPath";
             this.textBoxOutPath.Size = new System.Drawing.Size(665, 22);
-            this.textBoxOutPath.TabIndex = 3;
+            this.textBoxOutPath.TabIndex = 1;
             // 
             // buttonOutPath
             // 
             this.buttonOutPath.Location = new System.Drawing.Point(6, 21);
             this.buttonOutPath.Name = "buttonOutPath";
             this.buttonOutPath.Size = new System.Drawing.Size(91, 23);
-            this.buttonOutPath.TabIndex = 2;
+            this.buttonOutPath.TabIndex = 0;
             this.buttonOutPath.Text = "Selecionar";
             this.buttonOutPath.UseVisualStyleBackColor = true;
             this.buttonOutPath.Click += new System.EventHandler(this.buttonOutPath_Click);
@@ -200,7 +200,7 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(712, 286);
-            this.dataGridView.TabIndex = 4;
+            this.dataGridView.TabIndex = 2;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewImagens_CellContentClick);
             this.dataGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridViewImagens_RowsAdded);
             // 
@@ -237,7 +237,7 @@
             this.buttonBaixo.Location = new System.Drawing.Point(730, 215);
             this.buttonBaixo.Name = "buttonBaixo";
             this.buttonBaixo.Size = new System.Drawing.Size(58, 75);
-            this.buttonBaixo.TabIndex = 3;
+            this.buttonBaixo.TabIndex = 4;
             this.buttonBaixo.UseVisualStyleBackColor = true;
             this.buttonBaixo.Click += new System.EventHandler(this.buttonBaixo_Click);
             // 
@@ -248,7 +248,7 @@
             this.buttonCima.Location = new System.Drawing.Point(730, 134);
             this.buttonCima.Name = "buttonCima";
             this.buttonCima.Size = new System.Drawing.Size(58, 75);
-            this.buttonCima.TabIndex = 2;
+            this.buttonCima.TabIndex = 3;
             this.buttonCima.UseVisualStyleBackColor = true;
             this.buttonCima.Click += new System.EventHandler(this.buttonCima_Click);
             // 

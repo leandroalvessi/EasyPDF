@@ -14,3 +14,9 @@ namespace EasyPDF.Controllers
         }
     }
 }
+
+//Execute a seguinte consulta para obter o nome da sequência:
+//SELECT pg_get_serial_sequence('licenses', 'id');
+
+//Reiniciar a sequência:
+//SELECT setval('licenses_id_seq', 1, false);
