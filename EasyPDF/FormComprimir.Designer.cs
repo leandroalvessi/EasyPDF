@@ -41,14 +41,15 @@
             this.textBoxInpPath = new System.Windows.Forms.TextBox();
             this.buttonInpPath = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.Seleciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxVersao = new System.Windows.Forms.ComboBox();
             this.groupBoxVersao = new System.Windows.Forms.GroupBox();
             this.groupBoxCompressao = new System.Windows.Forms.GroupBox();
             this.comboBoxCompressao = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Seleciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tamanho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxSequencia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSequencia)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -195,7 +196,8 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seleciona,
-            this.Nome});
+            this.Nome,
+            this.tamanho});
             this.dataGridView.Location = new System.Drawing.Point(11, 153);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
@@ -206,24 +208,6 @@
             this.dataGridView.Size = new System.Drawing.Size(774, 267);
             this.dataGridView.TabIndex = 4;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
-            // 
-            // Seleciona
-            // 
-            this.Seleciona.HeaderText = "Seleciona";
-            this.Seleciona.MinimumWidth = 6;
-            this.Seleciona.Name = "Seleciona";
-            this.Seleciona.ReadOnly = true;
-            this.Seleciona.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Seleciona.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Seleciona.Width = 80;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.MinimumWidth = 6;
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 500;
             // 
             // comboBoxVersao
             // 
@@ -297,6 +281,31 @@
             this.ajudaToolStripMenuItem.Text = "Ajuda";
             this.ajudaToolStripMenuItem.Click += new System.EventHandler(this.ajudaToolStripMenuItem_Click);
             // 
+            // Seleciona
+            // 
+            this.Seleciona.HeaderText = "Seleciona";
+            this.Seleciona.MinimumWidth = 6;
+            this.Seleciona.Name = "Seleciona";
+            this.Seleciona.ReadOnly = true;
+            this.Seleciona.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Seleciona.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Seleciona.Width = 80;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.MinimumWidth = 6;
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 380;
+            // 
+            // tamanho
+            // 
+            this.tamanho.HeaderText = "Tamanho";
+            this.tamanho.MinimumWidth = 6;
+            this.tamanho.Name = "tamanho";
+            this.tamanho.ReadOnly = true;
+            // 
             // FormComprimir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -348,13 +357,14 @@
         private System.Windows.Forms.TextBox textBoxInpPath;
         private System.Windows.Forms.Button buttonInpPath;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleciona;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.ComboBox comboBoxVersao;
         private System.Windows.Forms.GroupBox groupBoxVersao;
         private System.Windows.Forms.GroupBox groupBoxCompressao;
         private System.Windows.Forms.ComboBox comboBoxCompressao;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleciona;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tamanho;
     }
 }

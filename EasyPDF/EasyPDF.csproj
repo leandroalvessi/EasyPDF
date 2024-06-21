@@ -197,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ConnectionDB.cs" />
+    <Compile Include="Controllers\FileFunction.cs" />
     <Compile Include="Controllers\InternetChecker.cs" />
     <Compile Include="Controllers\LicenseValidator.cs" />
     <Compile Include="FormComprimir.cs">
