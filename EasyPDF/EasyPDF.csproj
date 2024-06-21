@@ -196,6 +196,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AppInfo.cs" />
     <Compile Include="Controllers\ConnectionDB.cs" />
     <Compile Include="Controllers\FileFunction.cs" />
     <Compile Include="Controllers\InternetChecker.cs" />
