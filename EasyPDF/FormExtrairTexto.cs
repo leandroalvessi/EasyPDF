@@ -1,4 +1,5 @@
-﻿using iTextSharp.text.pdf;
+﻿using EasyPDF.Controllers;
+using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 using System;
 using System.Data;
@@ -43,16 +44,18 @@ namespace EasyPDF
         {
             if (Directory.Exists(directoryPath))
             {
-                string[] imageFiles = Directory.GetFiles(directoryPath, "*.*", SearchOption.TopDirectoryOnly)
+                string[] pdfFiles = Directory.GetFiles(directoryPath, "*.*", SearchOption.TopDirectoryOnly)
                                                 .Where(s => s.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase))
                                                 .ToArray();
 
                 dataGridView.Rows.Clear();
 
-                foreach (string imageFile in imageFiles)
+                foreach (string pdfFile in pdfFiles)
                 {
-                    string imageName = System.IO.Path.GetFileName(imageFile);
-                    dataGridView.Rows.Add(false, imageName);
+                    string fileName = System.IO.Path.GetFileName(pdfFile);
+                    long fileSize = new FileInfo(pdfFile).Length;
+                    string readableSize = FileFunction.GetReadableFileSize(fileSize);
+                    dataGridView.Rows.Add(false, fileName, readableSize);
                 }
             }
             else

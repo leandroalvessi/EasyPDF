@@ -248,7 +248,6 @@
             this.tamanho.MinimumWidth = 6;
             this.tamanho.Name = "tamanho";
             this.tamanho.ReadOnly = true;
-            this.tamanho.Width = 125;
             // 
             // FormPdfMerge
             // 
