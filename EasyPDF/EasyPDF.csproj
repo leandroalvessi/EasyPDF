@@ -28,7 +28,7 @@
     <ProductName>EasyPDF</ProductName>
     <PublisherName>Leandro Alves</PublisherName>
     <SuiteName>Leandro Alves</SuiteName>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
