@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using EasyPDF.Controllers;
 
 namespace EasyPDF
 {
@@ -31,16 +32,18 @@ namespace EasyPDF
         {
             if (Directory.Exists(directoryPath))
             {
-                string[] imageFiles = Directory.GetFiles(directoryPath, "*.*", SearchOption.TopDirectoryOnly)
+                string[] pdfFiles = Directory.GetFiles(directoryPath, "*.*", SearchOption.TopDirectoryOnly)
                                                 .Where(s => s.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase))
                                                 .ToArray();
 
                 dataGridView.Rows.Clear();
 
-                foreach (string imageFile in imageFiles)
+                foreach (string pdfFile in pdfFiles)
                 {
-                    string imageName = Path.GetFileName(imageFile);
-                    dataGridView.Rows.Add(false, imageName);
+                    string imageName = Path.GetFileName(pdfFile);
+                    long fileSize = new FileInfo(pdfFile).Length;
+                    string readableSize = FileFunction.GetReadableFileSize(fileSize);
+                    dataGridView.Rows.Add(false, imageName, readableSize);
                 }
             }
             else

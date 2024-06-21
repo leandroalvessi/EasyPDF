@@ -41,15 +41,15 @@
             this.textBoxInpPath = new System.Windows.Forms.TextBox();
             this.buttonInpPath = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Seleciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tamanho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxVersao = new System.Windows.Forms.ComboBox();
             this.groupBoxVersao = new System.Windows.Forms.GroupBox();
             this.groupBoxCompressao = new System.Windows.Forms.GroupBox();
             this.comboBoxCompressao = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Seleciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tamanho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxSequencia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSequencia)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -209,6 +209,32 @@
             this.dataGridView.TabIndex = 4;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
+            // Seleciona
+            // 
+            this.Seleciona.HeaderText = "Seleciona";
+            this.Seleciona.MinimumWidth = 6;
+            this.Seleciona.Name = "Seleciona";
+            this.Seleciona.ReadOnly = true;
+            this.Seleciona.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Seleciona.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Seleciona.Width = 80;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.MinimumWidth = 6;
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 380;
+            // 
+            // tamanho
+            // 
+            this.tamanho.HeaderText = "Tamanho";
+            this.tamanho.MinimumWidth = 6;
+            this.tamanho.Name = "tamanho";
+            this.tamanho.ReadOnly = true;
+            this.tamanho.Width = 125;
+            // 
             // comboBoxVersao
             // 
             this.comboBoxVersao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -280,31 +306,6 @@
             this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.ajudaToolStripMenuItem.Text = "Ajuda";
             this.ajudaToolStripMenuItem.Click += new System.EventHandler(this.ajudaToolStripMenuItem_Click);
-            // 
-            // Seleciona
-            // 
-            this.Seleciona.HeaderText = "Seleciona";
-            this.Seleciona.MinimumWidth = 6;
-            this.Seleciona.Name = "Seleciona";
-            this.Seleciona.ReadOnly = true;
-            this.Seleciona.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Seleciona.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Seleciona.Width = 80;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.MinimumWidth = 6;
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 380;
-            // 
-            // tamanho
-            // 
-            this.tamanho.HeaderText = "Tamanho";
-            this.tamanho.MinimumWidth = 6;
-            this.tamanho.Name = "tamanho";
-            this.tamanho.ReadOnly = true;
             // 
             // FormComprimir
             // 
